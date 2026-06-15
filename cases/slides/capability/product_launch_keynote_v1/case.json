@@ -1,0 +1,36 @@
+{
+  "id": "slides.launch.product_keynote_v1",
+  "title": "Consumer product launch keynote deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "product_launch",
+  "set": "capability",
+  "description": "Create a visually led launch deck for a consumer product announcement.",
+  "question": {
+    "query": "Create an 8-10 slide product launch keynote deck for PulseBand, a consumer wearable that combines recovery tracking, real-time hydration coaching, and emergency contact alerts. The deck should open with a strong audience hook, reveal the product, explain three signature features, include a demo flow, cover ecosystem integrations, pricing and availability, press or customer proof, and end with a clear call to action. The deck should be visual and presentation-ready.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.76,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/launch_structure.json",
+    "graders/launch_workflow.json",
+    "graders/launch_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "product_launch",
+    "primary_dimensions": ["first_impression", "visual_story", "feature_clarity", "cta"]
+  }
+}

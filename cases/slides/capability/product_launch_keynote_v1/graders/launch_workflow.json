@@ -1,0 +1,14 @@
+{
+  "id": "launch_workflow",
+  "type": "trace_signal",
+  "weight": 0.15,
+  "threshold": 0.5,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "planned_reveal", "any_text": ["audience", "hook", "reveal", "call to action"], "min_count": 2 },
+      { "id": "built_flow", "any_text": ["outline", "storyboard", "demo", "feature"], "min_count": 2 },
+      { "id": "checked_visuals", "any_text": ["review", "check", "preview", "visual"], "min_count": 1 }
+    ]
+  }
+}

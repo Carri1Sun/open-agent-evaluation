@@ -1,0 +1,14 @@
+{
+  "id": "decision_workflow",
+  "type": "trace_signal",
+  "weight": 0.15,
+  "threshold": 0.5,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "framed_decision", "any_text": ["decision", "audience", "objective", "ask"], "min_count": 2 },
+      { "id": "structured_options", "any_text": ["outline", "storyboard", "options", "tradeoff"], "min_count": 2 },
+      { "id": "checked_output", "any_text": ["review", "check", "preview", "quality"], "min_count": 1 }
+    ]
+  }
+}

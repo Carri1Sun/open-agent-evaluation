@@ -1,0 +1,36 @@
+{
+  "id": "slides.academic.research_defense_v1",
+  "title": "Academic research defense deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "academic_defense",
+  "set": "capability",
+  "description": "Create a research defense deck that balances rigor and presentation clarity.",
+  "question": {
+    "query": "Create a 12-14 slide academic defense deck for an HCI study on how AI coding copilots affect code review quality. The deck should include the research question, motivation, related work, hypotheses, study design, participant sample, tasks and measures, key results, statistical interpretation, limitations, contributions, and future work. Include at least two charts and one methods or results table.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.78,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/defense_structure.json",
+    "graders/defense_workflow.json",
+    "graders/defense_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "academic_defense",
+    "primary_dimensions": ["method_rigor", "evidence", "limitations", "clarity"]
+  }
+}

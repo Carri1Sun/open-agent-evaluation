@@ -1,0 +1,18 @@
+{
+  "id": "investor_structure",
+  "type": "pptx_structure",
+  "weight": 0.45,
+  "threshold": 0.78,
+  "required": true,
+  "config": {
+    "artifact_id": "deck",
+    "min_slides": 10,
+    "max_slides": 12,
+    "min_images": 2,
+    "min_charts": 1,
+    "min_non_empty_slides": 10,
+    "required_keywords": ["problem", "market", "workflow", "traction", "business model", "competition", "security", "team", "ask"],
+    "max_text_chars_per_slide": 850,
+    "require_widescreen": true
+  }
+}

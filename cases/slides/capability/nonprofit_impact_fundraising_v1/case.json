@@ -1,0 +1,36 @@
+{
+  "id": "slides.fundraising.nonprofit_impact_v1",
+  "title": "Nonprofit impact fundraising deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "fundraising_deck",
+  "set": "capability",
+  "description": "Create a donor-facing deck that combines impact evidence and an emotional story.",
+  "question": {
+    "query": "Create an 8-10 slide fundraising deck for BrightPath, an education nonprofit expanding tutoring programs for first-generation high school students. Use these facts: 4,800 students served, graduation rate improved by 18 percentage points, average program cost is $620 per student, 73% of students are from low-income households, and a $1.5M campaign funds expansion to three new districts. The deck should include mission, problem, impact evidence, a student story, program model, budget use, campaign ask, and next steps. Include at least one chart, one budget or impact table, and two visuals.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.76,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/fundraising_structure.json",
+    "graders/fundraising_workflow.json",
+    "graders/fundraising_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "nonprofit_fundraising",
+    "primary_dimensions": ["mission_clarity", "impact_evidence", "emotion", "ask"]
+  }
+}

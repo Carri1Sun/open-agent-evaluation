@@ -1,0 +1,36 @@
+{
+  "id": "slides.training.compliance_v1",
+  "title": "Healthcare AI data handling training deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "training_workshop",
+  "set": "capability",
+  "description": "Create a practical training deck for a regulated data-handling workflow.",
+  "question": {
+    "query": "Create a 12-15 slide training deck for healthcare employees on safe AI-assisted data handling. The deck should include learning objectives, policy principles, examples of allowed and prohibited data use, step-by-step decision guidance, two realistic scenarios, an interactive exercise, a short quiz, an answer key, and a final checklist. Include speaker notes for facilitators on at least six slides.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.78,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/compliance_structure.json",
+    "graders/compliance_workflow.json",
+    "graders/compliance_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "regulated_training",
+    "primary_dimensions": ["learning_path", "scenario_design", "facilitator_support", "compliance_clarity"]
+  }
+}

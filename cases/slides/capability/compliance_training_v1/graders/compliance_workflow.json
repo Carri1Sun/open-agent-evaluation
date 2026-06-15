@@ -1,0 +1,14 @@
+{
+  "id": "compliance_workflow",
+  "type": "trace_signal",
+  "weight": 0.15,
+  "threshold": 0.5,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "planned_learning", "any_text": ["learning objective", "audience", "training", "facilitator"], "min_count": 2 },
+      { "id": "designed_practice", "any_text": ["scenario", "exercise", "quiz", "answer key"], "min_count": 2 },
+      { "id": "checked_material", "any_text": ["review", "check", "speaker notes", "quality"], "min_count": 1 }
+    ]
+  }
+}

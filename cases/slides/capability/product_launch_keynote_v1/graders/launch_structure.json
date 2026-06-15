@@ -1,0 +1,17 @@
+{
+  "id": "launch_structure",
+  "type": "pptx_structure",
+  "weight": 0.45,
+  "threshold": 0.78,
+  "required": true,
+  "config": {
+    "artifact_id": "deck",
+    "min_slides": 8,
+    "max_slides": 10,
+    "min_images": 4,
+    "min_non_empty_slides": 8,
+    "required_keywords": ["PulseBand", "feature", "demo", "integration", "pricing", "availability", "call to action"],
+    "max_text_chars_per_slide": 650,
+    "require_widescreen": true
+  }
+}

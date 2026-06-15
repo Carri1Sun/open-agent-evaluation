@@ -1,0 +1,36 @@
+{
+  "id": "slides.sales.enterprise_security_v1",
+  "title": "Enterprise security sales proposal deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "sales_proposal",
+  "set": "capability",
+  "description": "Create a buyer-specific enterprise sales proposal for a security product.",
+  "question": {
+    "query": "Create a 9-11 slide enterprise sales proposal deck for a CISO evaluating an identity threat detection platform. The deck should cover the buyer pain, current risk, proposed architecture, deployment workflow, differentiators, proof points, compliance posture, ROI, implementation timeline, commercial options, and next steps. Include at least one architecture or workflow visual and one comparison or ROI table.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.76,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/sales_structure.json",
+    "graders/sales_workflow.json",
+    "graders/sales_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "enterprise_sales",
+    "primary_dimensions": ["buyer_fit", "value_proof", "risk_handling", "next_steps"]
+  }
+}

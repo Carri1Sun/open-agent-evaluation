@@ -1,0 +1,36 @@
+{
+  "id": "slides.policy.city_mobility_v1",
+  "title": "City mobility policy brief deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "policy_brief",
+  "set": "capability",
+  "description": "Create a policy deck for a public-sector decision audience.",
+  "question": {
+    "query": "Create a 10-12 slide policy brief deck for a city council evaluating a downtown congestion pricing pilot. The deck should define the policy goal, summarize the current congestion problem, compare at least two peer-city examples, present three policy options, analyze equity and small-business impacts, identify risks, propose an implementation roadmap, define success metrics, and end with a clear recommendation. Include at least one chart and one options table.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.76,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/policy_structure.json",
+    "graders/policy_quality.prompt.md",
+    "graders/policy_workflow.json"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "public_policy",
+    "primary_dimensions": ["stakeholder_fit", "evidence", "tradeoffs", "recommendation"]
+  }
+}

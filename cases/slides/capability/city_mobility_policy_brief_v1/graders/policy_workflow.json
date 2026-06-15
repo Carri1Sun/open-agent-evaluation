@@ -1,0 +1,14 @@
+{
+  "id": "policy_workflow",
+  "type": "trace_signal",
+  "weight": 0.2,
+  "threshold": 0.6,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "checked_peer_examples", "any_text": ["peer city", "example", "benchmark"], "min_count": 2 },
+      { "id": "considered_stakeholders", "any_text": ["stakeholder", "equity", "small business", "resident"], "min_count": 2 },
+      { "id": "captured_sources", "any_text": ["source", "citation", "url"], "min_count": 2 }
+    ]
+  }
+}

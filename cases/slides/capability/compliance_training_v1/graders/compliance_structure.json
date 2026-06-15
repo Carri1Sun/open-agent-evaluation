@@ -1,0 +1,18 @@
+{
+  "id": "compliance_structure",
+  "type": "pptx_structure",
+  "weight": 0.45,
+  "threshold": 0.8,
+  "required": true,
+  "config": {
+    "artifact_id": "deck",
+    "min_slides": 12,
+    "max_slides": 15,
+    "min_tables": 1,
+    "min_speaker_notes_slides": 6,
+    "min_non_empty_slides": 12,
+    "required_keywords": ["objective", "policy", "allowed", "prohibited", "scenario", "exercise", "quiz", "answer key", "checklist"],
+    "max_text_chars_per_slide": 900,
+    "require_widescreen": true
+  }
+}

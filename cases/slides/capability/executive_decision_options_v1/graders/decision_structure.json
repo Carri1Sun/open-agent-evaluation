@@ -1,0 +1,18 @@
+{
+  "id": "decision_structure",
+  "type": "pptx_structure",
+  "weight": 0.45,
+  "threshold": 0.8,
+  "required": true,
+  "config": {
+    "artifact_id": "deck",
+    "min_slides": 8,
+    "max_slides": 10,
+    "min_charts": 1,
+    "min_tables": 1,
+    "min_non_empty_slides": 8,
+    "required_keywords": ["decision", "options", "tradeoff", "recommendation", "risk", "implementation", "ask"],
+    "max_text_chars_per_slide": 900,
+    "require_widescreen": true
+  }
+}

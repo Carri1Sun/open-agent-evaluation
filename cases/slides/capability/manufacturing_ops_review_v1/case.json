@@ -1,0 +1,36 @@
+{
+  "id": "slides.operations.manufacturing_review_v1",
+  "title": "Manufacturing operations review deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "operations_review",
+  "set": "capability",
+  "description": "Create an operations review deck for plant leadership.",
+  "question": {
+    "query": "Create a 10-12 slide monthly operations review deck for a manufacturing plant leadership team. Use these working metrics: OEE moved from 68% to 74%, scrap rate increased from 3.1% to 4.4%, unplanned downtime fell from 42 hours to 31 hours, safety incidents were 2, throughput missed plan by 6%, and line 3 accounted for 48% of downtime. The deck should summarize performance, show trends, identify root causes, separate wins from risks, propose corrective actions, assign owners, and end with a next-month operating cadence. Include at least two charts and one action table.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.76,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/ops_structure.json",
+    "graders/ops_quality.prompt.md",
+    "graders/ops_workflow.json"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "manufacturing_operations",
+    "primary_dimensions": ["data_story", "root_cause", "actionability", "operating_cadence"]
+  }
+}

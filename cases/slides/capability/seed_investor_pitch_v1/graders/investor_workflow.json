@@ -1,0 +1,14 @@
+{
+  "id": "investor_workflow",
+  "type": "trace_signal",
+  "weight": 0.15,
+  "threshold": 0.5,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "planned_pitch", "any_text": ["investor", "audience", "narrative", "ask"], "min_count": 2 },
+      { "id": "structured_story", "any_text": ["outline", "storyboard", "problem", "traction"], "min_count": 2 },
+      { "id": "checked_deck", "any_text": ["review", "check", "preview", "quality"], "min_count": 1 }
+    ]
+  }
+}

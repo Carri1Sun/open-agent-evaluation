@@ -1,0 +1,14 @@
+{
+  "id": "defense_workflow",
+  "type": "trace_signal",
+  "weight": 0.15,
+  "threshold": 0.5,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "framed_research", "any_text": ["research question", "audience", "defense", "contribution"], "min_count": 2 },
+      { "id": "organized_evidence", "any_text": ["outline", "method", "result", "limitation"], "min_count": 2 },
+      { "id": "checked_rigor", "any_text": ["review", "check", "interpretation", "quality"], "min_count": 1 }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "slides.redesign.brand_refresh_v1",
+  "title": "Brand refresh and visual rework deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "visual_rework",
+  "set": "capability",
+  "description": "Rewrite rough strategy material into a polished brand-consistent deck.",
+  "question": {
+    "query": "Create an 8-10 slide polished strategy deck from this rough outline for a fintech company: 1) We need to improve activation, 2) onboarding is too complex, 3) SMB customers need faster cash-flow visibility, 4) priorities are simplified onboarding, smarter alerts, and partner integrations, 5) roadmap is Q1 onboarding reset, Q2 alert engine, Q3 partner marketplace, 6) success metrics are activation rate, time to first transaction, alert engagement, and partner attach rate. Apply a consistent modern brand system using navy, teal, and coral accents, preserve the core message, simplify dense wording, and include an appendix slide with the original outline summarized.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.76,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/rework_structure.json",
+    "graders/rework_workflow.json",
+    "graders/rework_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "visual_rework",
+    "primary_dimensions": ["message_fidelity", "information_hierarchy", "brand_consistency", "readability"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "ops_workflow",
+  "type": "trace_signal",
+  "weight": 0.2,
+  "threshold": 0.6,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "calculated_metrics", "any_text": ["calculate", "metric", "trend"], "min_count": 2 },
+      { "id": "diagnosed_causes", "any_text": ["root cause", "driver", "line 3", "downtime"], "min_count": 2 },
+      { "id": "built_actions", "any_text": ["owner", "action", "cadence", "next month"], "min_count": 2 }
+    ]
+  }
+}

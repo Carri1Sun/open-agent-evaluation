@@ -1,0 +1,14 @@
+{
+  "id": "fundraising_workflow",
+  "type": "trace_signal",
+  "weight": 0.15,
+  "threshold": 0.5,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "planned_donor_story", "any_text": ["donor", "audience", "mission", "ask"], "min_count": 2 },
+      { "id": "balanced_evidence_story", "any_text": ["outline", "impact", "student story", "budget"], "min_count": 2 },
+      { "id": "checked_pitch", "any_text": ["review", "check", "preview", "quality"], "min_count": 1 }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "slides.pitch.seed_investor_v1",
+  "title": "Seed investor pitch deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "pitch_deck",
+  "set": "capability",
+  "description": "Create a seed-stage investor deck with a complete fundraising narrative.",
+  "question": {
+    "query": "Create a 10-12 slide seed investor pitch deck for CareFlow AI, a startup that helps hospital operations teams predict discharge bottlenecks and coordinate care tasks. The deck should cover the problem, why now, market opportunity, product workflow, early traction, business model, competitive landscape, go-to-market, regulatory and security posture, team, financial plan, and a $2.5M seed ask. Use an investor audience and make the narrative concise and evidence-oriented.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.76,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/investor_structure.json",
+    "graders/investor_workflow.json",
+    "graders/investor_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "fundraising",
+    "primary_dimensions": ["storyline", "audience_fit", "proof", "ask"]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "slides.decision.executive_options_v1",
+  "title": "Executive decision options deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "decision_brief",
+  "set": "capability",
+  "description": "Create a leadership deck that supports a concrete operating decision.",
+  "question": {
+    "query": "Create an 8-10 slide executive decision deck for a leadership team deciding whether to invest in customer support automation. Use these working facts: 40,000 tickets per month, current cost per ticket is $7.20, CSAT is 83%, backlog age is 9 days, available budget is $1.2M, and the target is to reduce cost per ticket by 30% while improving CSAT by 5 points. The deck must frame the decision, compare three options, include a tradeoff matrix, recommend one option, explain risks and mitigations, show an implementation plan, and end with a clear decision ask. Include at least one chart and one summary table.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.78,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/decision_structure.json",
+    "graders/decision_workflow.json",
+    "graders/decision_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "scenario": "executive_decision",
+    "primary_dimensions": ["goal_clarity", "audience_fit", "evidence", "action"]
+  }
+}

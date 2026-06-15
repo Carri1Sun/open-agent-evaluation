@@ -1,0 +1,14 @@
+{
+  "id": "sales_workflow",
+  "type": "trace_signal",
+  "weight": 0.15,
+  "threshold": 0.5,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "framed_buyer", "any_text": ["CISO", "buyer", "audience", "risk"], "min_count": 2 },
+      { "id": "mapped_solution", "any_text": ["outline", "workflow", "architecture", "ROI"], "min_count": 2 },
+      { "id": "checked_proposal", "any_text": ["review", "check", "preview", "quality"], "min_count": 1 }
+    ]
+  }
+}

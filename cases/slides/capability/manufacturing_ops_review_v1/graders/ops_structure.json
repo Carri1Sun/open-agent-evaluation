@@ -1,0 +1,18 @@
+{
+  "id": "ops_structure",
+  "type": "pptx_structure",
+  "weight": 0.4,
+  "threshold": 0.78,
+  "required": true,
+  "config": {
+    "artifact_id": "deck",
+    "min_slides": 10,
+    "max_slides": 12,
+    "min_charts": 2,
+    "min_tables": 1,
+    "min_non_empty_slides": 10,
+    "required_keywords": ["OEE", "scrap", "downtime", "safety", "throughput", "root cause", "corrective action", "owner", "cadence"],
+    "max_text_chars_per_slide": 850,
+    "require_widescreen": true
+  }
+}
