@@ -8,6 +8,7 @@
   "description": "Create a practical training deck for a regulated data-handling workflow.",
   "question": {
     "query": "Create a 12-15 slide training deck for healthcare employees on safe AI-assisted data handling. The deck should include learning objectives, policy principles, examples of allowed and prohibited data use, step-by-step decision guidance, two realistic scenarios, an interactive exercise, a short quiz, an answer key, and a final checklist. Include speaker notes for facilitators on at least six slides.",
+    "query_chinese": "为医疗行业员工制作一份 12-15 页的培训 PPT，主题是安全地进行 AI 辅助数据处理。PPT 应包括学习目标、政策原则、允许和禁止的数据使用示例、逐步决策指导、两个真实场景、一个互动练习、一个简短测验、答案 key 和最终检查清单。至少在六页中加入面向培训主持人的演讲备注。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

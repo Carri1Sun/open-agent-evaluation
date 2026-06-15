@@ -8,6 +8,7 @@
   "description": "Create a seed-stage investor deck with a complete fundraising narrative.",
   "question": {
     "query": "Create a 10-12 slide seed investor pitch deck for CareFlow AI, a startup that helps hospital operations teams predict discharge bottlenecks and coordinate care tasks. The deck should cover the problem, why now, market opportunity, product workflow, early traction, business model, competitive landscape, go-to-market, regulatory and security posture, team, financial plan, and a $2.5M seed ask. Use an investor audience and make the narrative concise and evidence-oriented.",
+    "query_chinese": "为 CareFlow AI 制作一份 10-12 页的种子轮投资人 pitch PPT。CareFlow AI 是一家帮助医院运营团队预测出院瓶颈并协调护理任务的创业公司。PPT 应覆盖问题、为什么是现在、市场机会、产品工作流、早期 traction、商业模式、竞争格局、进入市场策略、监管和安全姿态、团队、财务计划，以及 250 万美元的种子轮融资请求。面向投资人受众，叙事应简洁并以证据为导向。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

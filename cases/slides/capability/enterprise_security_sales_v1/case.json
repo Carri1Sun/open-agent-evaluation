@@ -8,6 +8,7 @@
   "description": "Create a buyer-specific enterprise sales proposal for a security product.",
   "question": {
     "query": "Create a 9-11 slide enterprise sales proposal deck for a CISO evaluating an identity threat detection platform. The deck should cover the buyer pain, current risk, proposed architecture, deployment workflow, differentiators, proof points, compliance posture, ROI, implementation timeline, commercial options, and next steps. Include at least one architecture or workflow visual and one comparison or ROI table.",
+    "query_chinese": "为一位正在评估身份威胁检测平台的 CISO，制作一份 9-11 页的企业销售提案 PPT。PPT 应覆盖买方痛点、当前风险、建议架构、部署流程、差异化优势、证明点、合规姿态、ROI、实施时间线、商务选项和下一步。至少包含一个架构或流程视觉图，以及一个对比表或 ROI 表格。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

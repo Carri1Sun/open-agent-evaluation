@@ -8,6 +8,7 @@
   "description": "Create a donor-facing deck that combines impact evidence and an emotional story.",
   "question": {
     "query": "Create an 8-10 slide fundraising deck for BrightPath, an education nonprofit expanding tutoring programs for first-generation high school students. Use these facts: 4,800 students served, graduation rate improved by 18 percentage points, average program cost is $620 per student, 73% of students are from low-income households, and a $1.5M campaign funds expansion to three new districts. The deck should include mission, problem, impact evidence, a student story, program model, budget use, campaign ask, and next steps. Include at least one chart, one budget or impact table, and two visuals.",
+    "query_chinese": "为教育公益组织 BrightPath 制作一份 8-10 页的募资 PPT，该组织正在扩展面向第一代高中生的辅导项目。使用这些事实：已服务 4,800 名学生，毕业率提升 18 个百分点，平均项目成本为每名学生 620 美元，73% 的学生来自低收入家庭，150 万美元募资活动将支持项目扩展到三个新学区。PPT 应包括使命、问题、影响力证据、一个学生故事、项目模式、预算用途、募资请求和下一步。至少包含一个图表、一个预算或影响力表格，以及两个视觉元素。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

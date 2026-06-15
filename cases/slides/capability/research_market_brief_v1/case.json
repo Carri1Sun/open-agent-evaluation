@@ -8,6 +8,7 @@
   "description": "Create a research-heavy briefing deck with evidence and cross-validation.",
   "question": {
     "query": "Build a concise 8-10 slide market briefing on the current AI coding tools market for a product strategy meeting. Include market map, customer segments, competitive positions, evidence-backed risks, and recommended next moves. Cite sources in speaker notes.",
+    "query_chinese": "为一次产品战略会议制作一份简洁的 8-10 页市场简报 PPT，主题是当前 AI 编程工具市场。包括市场地图、客户细分、竞争定位、有证据支撑的风险，以及建议的下一步行动。请在演讲备注中引用来源。",
     "browser_initial_state": {
       "url": "https://www.google.com/",
       "auth_state": "public_web_only",

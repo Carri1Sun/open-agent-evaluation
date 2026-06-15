@@ -8,6 +8,7 @@
   "description": "Small deterministic regression case for producing a deck with chart and table evidence.",
   "question": {
     "query": "Create a 5 slide deck from the attached sales data. Include one chart, one table, a summary slide, and one recommendation slide. Keep it in widescreen format.",
+    "query_chinese": "根据附件中的销售数据制作一份 5 页 PPT。包含一个图表、一个表格、一页摘要，以及一页建议。保持宽屏格式。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

@@ -8,6 +8,7 @@
   "description": "Create a workshop deck with exercises and presenter notes.",
   "question": {
     "query": "Create a 12-15 slide internal workshop deck that teaches support agents how to review AI-agent task traces. Include learning objectives, examples, practice exercises, answer keys in speaker notes, and a closing checklist.",
+    "query_chinese": "制作一份 12-15 页的内部工作坊 PPT，用于教支持 agent 如何审查 AI agent 任务 trace。包括学习目标、示例、练习、写在演讲备注中的答案 key，以及结尾检查清单。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

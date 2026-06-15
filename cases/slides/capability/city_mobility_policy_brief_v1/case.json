@@ -8,6 +8,7 @@
   "description": "Create a policy deck for a public-sector decision audience.",
   "question": {
     "query": "Create a 10-12 slide policy brief deck for a city council evaluating a downtown congestion pricing pilot. The deck should define the policy goal, summarize the current congestion problem, compare at least two peer-city examples, present three policy options, analyze equity and small-business impacts, identify risks, propose an implementation roadmap, define success metrics, and end with a clear recommendation. Include at least one chart and one options table.",
+    "query_chinese": "为正在评估市中心拥堵收费试点的市议会，制作一份 10-12 页的政策简报 PPT。PPT 应定义政策目标，概述当前拥堵问题，比较至少两个同类城市案例，提出三个政策选项，分析公平性和小企业影响，识别风险，提出实施路线图，定义成功指标，并以明确建议收尾。至少包含一个图表和一个选项表格。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

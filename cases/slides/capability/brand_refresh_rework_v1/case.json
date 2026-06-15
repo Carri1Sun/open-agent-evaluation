@@ -8,6 +8,7 @@
   "description": "Rewrite rough strategy material into a polished brand-consistent deck.",
   "question": {
     "query": "Create an 8-10 slide polished strategy deck from this rough outline for a fintech company: 1) We need to improve activation, 2) onboarding is too complex, 3) SMB customers need faster cash-flow visibility, 4) priorities are simplified onboarding, smarter alerts, and partner integrations, 5) roadmap is Q1 onboarding reset, Q2 alert engine, Q3 partner marketplace, 6) success metrics are activation rate, time to first transaction, alert engagement, and partner attach rate. Apply a consistent modern brand system using navy, teal, and coral accents, preserve the core message, simplify dense wording, and include an appendix slide with the original outline summarized.",
+    "query_chinese": "根据这份面向一家金融科技公司的粗略大纲，制作一份 8-10 页的精修策略 PPT：1）我们需要提升激活率，2）入门流程过于复杂，3）SMB 客户需要更快看到现金流情况，4）优先事项是简化入门流程、更智能的提醒和合作伙伴集成，5）路线图是 Q1 重置入门流程、Q2 推出提醒引擎、Q3 建设合作伙伴市场，6）成功指标是激活率、首次交易时间、提醒互动率和合作伙伴绑定率。使用海军蓝、蓝绿色和珊瑚色点缀，应用一致的现代品牌系统，保留核心信息，简化密集表述，并附上一页 appendix 概述原始大纲。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

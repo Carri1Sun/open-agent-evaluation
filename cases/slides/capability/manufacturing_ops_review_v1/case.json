@@ -8,6 +8,7 @@
   "description": "Create an operations review deck for plant leadership.",
   "question": {
     "query": "Create a 10-12 slide monthly operations review deck for a manufacturing plant leadership team. Use these working metrics: OEE moved from 68% to 74%, scrap rate increased from 3.1% to 4.4%, unplanned downtime fell from 42 hours to 31 hours, safety incidents were 2, throughput missed plan by 6%, and line 3 accounted for 48% of downtime. The deck should summarize performance, show trends, identify root causes, separate wins from risks, propose corrective actions, assign owners, and end with a next-month operating cadence. Include at least two charts and one action table.",
+    "query_chinese": "为一家制造工厂的领导团队制作一份 10-12 页的月度运营复盘 PPT。使用这些工作指标：OEE 从 68% 提升到 74%，废品率从 3.1% 上升到 4.4%，非计划停机时间从 42 小时降至 31 小时，安全事件为 2 起，产量低于计划 6%，3 号产线贡献了 48% 的停机时间。PPT 应总结表现、展示趋势、识别根因、区分成绩和风险、提出纠正措施、指定负责人，并以次月运营节奏收尾。至少包含两个图表和一个行动表格。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

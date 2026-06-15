@@ -8,6 +8,7 @@
   "description": "Create a visually led launch deck for a consumer product announcement.",
   "question": {
     "query": "Create an 8-10 slide product launch keynote deck for PulseBand, a consumer wearable that combines recovery tracking, real-time hydration coaching, and emergency contact alerts. The deck should open with a strong audience hook, reveal the product, explain three signature features, include a demo flow, cover ecosystem integrations, pricing and availability, press or customer proof, and end with a clear call to action. The deck should be visual and presentation-ready.",
+    "query_chinese": "为 PulseBand 制作一份 8-10 页的产品发布 keynote PPT。PulseBand 是一款消费级可穿戴设备，结合了恢复追踪、实时补水指导和紧急联系人提醒。PPT 应以有吸引力的受众 hook 开场，揭示产品，说明三个标志性功能，包含演示流程，覆盖生态集成、定价和上市信息、媒体或客户证明，并以明确的行动号召收尾。PPT 应具备强视觉表现，并达到可直接演示的状态。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

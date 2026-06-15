@@ -8,6 +8,7 @@
   "description": "Create a leadership deck that supports a concrete operating decision.",
   "question": {
     "query": "Create an 8-10 slide executive decision deck for a leadership team deciding whether to invest in customer support automation. Use these working facts: 40,000 tickets per month, current cost per ticket is $7.20, CSAT is 83%, backlog age is 9 days, available budget is $1.2M, and the target is to reduce cost per ticket by 30% while improving CSAT by 5 points. The deck must frame the decision, compare three options, include a tradeoff matrix, recommend one option, explain risks and mitigations, show an implementation plan, and end with a clear decision ask. Include at least one chart and one summary table.",
+    "query_chinese": "为一个正在决定是否投资客户支持自动化的领导团队，制作一份 8-10 页的高管决策 PPT。使用这些工作事实：每月 40,000 张工单，当前每张工单成本为 7.20 美元，CSAT 为 83%，积压工单年龄为 9 天，可用预算为 120 万美元，目标是在将 CSAT 提升 5 个百分点的同时，将每张工单成本降低 30%。PPT 必须界定决策问题，比较三个选项，包含一个权衡矩阵，推荐一个选项，说明风险和缓解措施，展示实施计划，并以明确的决策请求收尾。至少包含一个图表和一个摘要表格。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

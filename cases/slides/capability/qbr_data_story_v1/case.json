@@ -8,6 +8,7 @@
   "description": "Create an executive QBR deck from operating metrics.",
   "question": {
     "query": "Create a 10-12 slide QBR deck for executives using the attached operating metrics. Highlight growth, retention risk, funnel efficiency, and next-quarter actions. Include at least two charts, one summary table, and a clear recommendation section.",
+    "query_chinese": "使用附件中的运营指标，为高管制作一份 10-12 页的 QBR PPT。突出增长、留存风险、漏斗效率和下一季度行动。至少包含两个图表、一个摘要表格，以及一个清晰的建议部分。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

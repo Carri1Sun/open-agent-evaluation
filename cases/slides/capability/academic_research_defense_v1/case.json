@@ -8,6 +8,7 @@
   "description": "Create a research defense deck that balances rigor and presentation clarity.",
   "question": {
     "query": "Create a 12-14 slide academic defense deck for an HCI study on how AI coding copilots affect code review quality. The deck should include the research question, motivation, related work, hypotheses, study design, participant sample, tasks and measures, key results, statistical interpretation, limitations, contributions, and future work. Include at least two charts and one methods or results table.",
+    "query_chinese": "为一项关于 AI 编程助手如何影响代码评审质量的 HCI 研究，制作一份 12-14 页的学术答辩 PPT。PPT 应包括研究问题、研究动机、相关工作、假设、研究设计、参与者样本、任务和度量、关键结果、统计解释、局限性、贡献和未来工作。至少包含两个图表，以及一个方法或结果表格。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",

@@ -8,6 +8,7 @@
   "description": "Create a persuasive product pitch deck for enterprise buyers.",
   "question": {
     "query": "Create a 9-11 slide enterprise sales pitch deck for a browser-based AI agent platform. The deck should cover the customer problem, product workflow, differentiators, proof points, security posture, rollout plan, and close with a clear ask.",
+    "query_chinese": "为一个基于浏览器的 AI agent 平台制作一份 9-11 页的企业销售 pitch PPT。PPT 应覆盖客户问题、产品工作流、差异化优势、证明点、安全姿态、推广计划，并以明确请求收尾。",
     "browser_initial_state": {
       "url": "about:blank",
       "auth_state": "not_required",
