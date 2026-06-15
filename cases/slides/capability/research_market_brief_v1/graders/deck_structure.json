@@ -1,0 +1,17 @@
+{
+  "id": "deck_structure",
+  "type": "pptx_structure",
+  "weight": 0.25,
+  "threshold": 0.75,
+  "required": true,
+  "config": {
+    "artifact_id": "deck",
+    "min_slides": 8,
+    "max_slides": 10,
+    "min_tables": 1,
+    "min_speaker_notes_slides": 4,
+    "required_keywords": ["market", "segment", "competitive", "risk", "recommendation"],
+    "max_text_chars_per_slide": 900,
+    "require_widescreen": true
+  }
+}

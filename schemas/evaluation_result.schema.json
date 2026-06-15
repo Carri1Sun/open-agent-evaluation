@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open Agent Evaluation Result",
+  "type": "object",
+  "required": ["metrics", "results"],
+  "additionalProperties": false,
+  "properties": {
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "attempt_count": { "type": "integer", "minimum": 0 },
+        "case_count_with_results": { "type": "integer", "minimum": 0 },
+        "capability": { "type": "object", "additionalProperties": true },
+        "regression": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case_id", "attempt_id", "set", "score", "passed", "incomplete", "grader_results"],
+        "additionalProperties": false,
+        "properties": {
+          "case_id": { "type": "string" },
+          "attempt_id": { "type": "string" },
+          "set": { "enum": ["capability", "regression"] },
+          "score": { "type": "number", "minimum": 0, "maximum": 1 },
+          "passed": { "type": "boolean" },
+          "incomplete": { "type": "boolean" },
+          "required_failures": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "grader_results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["grader_id", "type", "score", "passed", "status", "summary", "details"],
+              "additionalProperties": false,
+              "properties": {
+                "grader_id": { "type": "string" },
+                "type": { "type": "string" },
+                "score": { "type": "number", "minimum": 0, "maximum": 1 },
+                "passed": { "type": "boolean" },
+                "status": { "enum": ["passed", "failed", "skipped", "error"] },
+                "summary": { "type": "string" },
+                "details": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

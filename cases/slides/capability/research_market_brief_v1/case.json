@@ -1,0 +1,34 @@
+{
+  "id": "slides.research_brief.market_v1",
+  "title": "Market research briefing deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "research_brief",
+  "set": "capability",
+  "description": "Create a research-heavy briefing deck with evidence and cross-validation.",
+  "question": {
+    "query": "Build a concise 8-10 slide market briefing on the current AI coding tools market for a product strategy meeting. Include market map, customer segments, competitive positions, evidence-backed risks, and recommended next moves. Cite sources in speaker notes.",
+    "browser_initial_state": {
+      "url": "https://www.google.com/",
+      "auth_state": "public_web_only",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.76,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/deck_structure.json",
+    "graders/research_workflow.json",
+    "graders/research_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides"
+  }
+}

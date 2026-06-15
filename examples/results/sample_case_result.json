@@ -1,0 +1,37 @@
+{
+  "case_id": "slides.regression.chart_table_v1",
+  "attempt_id": "run_1",
+  "set": "regression",
+  "score": 0.95,
+  "passed": true,
+  "incomplete": false,
+  "grader_results": [
+    {
+      "grader_id": "deck_exists",
+      "type": "artifact_presence",
+      "score": 1.0,
+      "passed": true,
+      "status": "passed",
+      "summary": "All required artifacts are present.",
+      "details": {
+        "checked": [
+          { "id": "deck", "exists": true, "path": "deck.pptx" }
+        ]
+      }
+    },
+    {
+      "grader_id": "deck_structure",
+      "type": "pptx_structure",
+      "score": 0.94,
+      "passed": true,
+      "status": "passed",
+      "summary": "PPTX structure satisfies the configured checks.",
+      "details": {
+        "slide_count": 5,
+        "chart_count": 1,
+        "table_count": 1,
+        "image_count": 0
+      }
+    }
+  ]
+}

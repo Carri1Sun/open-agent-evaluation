@@ -1,0 +1,14 @@
+{
+  "id": "workflow_signals",
+  "type": "trace_signal",
+  "weight": 0.2,
+  "threshold": 0.7,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "read_data", "any_text": ["qbr_metrics.csv", "read_csv", "spreadsheet"], "min_count": 1 },
+      { "id": "created_visual", "any_text": ["chart", "plot", "visualization"], "min_count": 1 },
+      { "id": "checked_deck", "any_text": ["render", "preview", "screenshot", "inspect"], "min_count": 1 }
+    ]
+  }
+}

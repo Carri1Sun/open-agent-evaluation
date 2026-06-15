@@ -1,0 +1,12 @@
+{
+  "id": "deck_exists",
+  "type": "artifact_presence",
+  "weight": 0.15,
+  "threshold": 1.0,
+  "required": true,
+  "config": {
+    "artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ]
+  }
+}

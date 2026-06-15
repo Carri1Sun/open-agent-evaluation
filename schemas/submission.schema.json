@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open Agent Evaluation Submission",
+  "type": "object",
+  "required": ["case_id", "attempt_id", "process", "final_report"],
+  "additionalProperties": false,
+  "properties": {
+    "case_id": { "type": "string", "minLength": 1 },
+    "attempt_id": { "type": "string", "minLength": 1 },
+    "process": {
+      "description": "The full agent work process, including loop thoughts, tool calls, observations, and intermediate state.",
+      "type": ["array", "object", "string"]
+    },
+    "final_report": {
+      "description": "The final user-facing response/report from the agent.",
+      "type": "string"
+    },
+    "trace_path": { "type": "string" },
+    "artifacts": {
+      "description": "Final produced files. This may be empty when the task does not require files.",
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "path"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string" },
+          "kind": { "type": "string" },
+          "path": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "pitch_structure",
+  "type": "pptx_structure",
+  "weight": 0.35,
+  "threshold": 0.78,
+  "required": true,
+  "config": {
+    "artifact_id": "deck",
+    "min_slides": 9,
+    "max_slides": 11,
+    "min_images": 2,
+    "required_keywords": ["problem", "workflow", "differentiator", "security", "rollout", "ask"],
+    "max_text_chars_per_slide": 850,
+    "require_widescreen": true
+  }
+}

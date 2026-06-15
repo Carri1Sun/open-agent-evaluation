@@ -1,0 +1,40 @@
+{
+  "id": "slides.regression.chart_table_v1",
+  "title": "Chart and table deck regression",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "data_presentation",
+  "set": "regression",
+  "description": "Small deterministic regression case for producing a deck with chart and table evidence.",
+  "question": {
+    "query": "Create a 5 slide deck from the attached sales data. Include one chart, one table, a summary slide, and one recommendation slide. Keep it in widescreen format.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": ["attachments/sales.csv"]
+    },
+    "attachments": [
+      {
+        "name": "sales.csv",
+        "kind": "csv",
+        "path": "attachments/sales.csv",
+        "description": "Monthly sales data by region."
+      }
+    ]
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.85,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/deck_structure.json"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "source": "Promoted from capability set after stable deterministic passing."
+  }
+}

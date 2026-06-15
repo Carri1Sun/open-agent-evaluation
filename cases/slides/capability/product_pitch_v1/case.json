@@ -1,0 +1,33 @@
+{
+  "id": "slides.pitch.product_v1",
+  "title": "Product pitch deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "pitch_deck",
+  "set": "capability",
+  "description": "Create a persuasive product pitch deck for enterprise buyers.",
+  "question": {
+    "query": "Create a 9-11 slide enterprise sales pitch deck for a browser-based AI agent platform. The deck should cover the customer problem, product workflow, differentiators, proof points, security posture, rollout plan, and close with a clear ask.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.75,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/pitch_structure.json",
+    "graders/pitch_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides"
+  }
+}

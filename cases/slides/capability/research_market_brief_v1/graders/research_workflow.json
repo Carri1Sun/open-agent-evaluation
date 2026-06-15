@@ -1,0 +1,15 @@
+{
+  "id": "research_workflow",
+  "type": "trace_signal",
+  "weight": 0.25,
+  "threshold": 0.75,
+  "required": false,
+  "config": {
+    "signals": [
+      { "id": "searched_web", "any_text": ["search", "google", "query"], "min_count": 2 },
+      { "id": "read_sources", "any_text": ["open", "read", "extract"], "min_count": 3 },
+      { "id": "cross_validated", "any_text": ["cross", "verify", "corroborate", "second source"], "min_count": 1 },
+      { "id": "captured_citations", "any_text": ["citation", "source", "url"], "min_count": 3 }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open Agent Evaluation Case",
+  "type": "object",
+  "required": ["id", "title", "task_family", "task_type", "set", "question", "output_contract"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "version": { "type": "string" },
+    "task_family": { "type": "string", "minLength": 1 },
+    "task_type": { "type": "string", "minLength": 1 },
+    "set": { "enum": ["capability", "regression"] },
+    "description": { "type": "string" },
+    "question": {
+      "type": "object",
+      "required": ["query"],
+      "additionalProperties": true,
+      "properties": {
+        "query": { "type": "string", "minLength": 1 },
+        "browser_initial_state": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "kind"],
+            "additionalProperties": true,
+            "properties": {
+              "name": { "type": "string" },
+              "kind": { "type": "string" },
+              "path": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "input": {
+      "description": "Runtime-normalized legacy form. Prefer authoring `question` in case folders.",
+      "type": "object",
+      "required": ["user_query"],
+      "additionalProperties": true,
+      "properties": {
+        "user_query": { "type": "string", "minLength": 1 },
+        "browser_initial_state": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "url": { "type": "string" },
+            "auth_state": { "type": "string" },
+            "local_files": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "kind"],
+            "additionalProperties": true,
+            "properties": {
+              "name": { "type": "string" },
+              "kind": { "type": "string" },
+              "path": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "output_contract": {
+      "type": "object",
+      "required": ["required_artifacts"],
+      "additionalProperties": true,
+      "properties": {
+        "required_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "kind"],
+            "additionalProperties": true,
+            "properties": {
+              "id": { "type": "string" },
+              "kind": { "type": "string" },
+              "extension": { "type": "string" },
+              "required": { "type": "boolean" }
+            }
+          }
+        },
+        "final_report": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "success_threshold": { "type": "number", "minimum": 0, "maximum": 1 },
+    "grader_files": {
+      "description": "Author-friendly list of grader definition files relative to the case folder.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "graders": {
+      "description": "Inline grader specs or grader file references. Prefer grader_files for non-technical authoring.",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          {
+            "type": "object",
+            "required": ["id", "type"],
+            "additionalProperties": true,
+            "properties": {
+              "id": { "type": "string" },
+              "type": { "type": "string" },
+              "weight": { "type": "number", "exclusiveMinimum": 0 },
+              "threshold": { "type": "number", "minimum": 0, "maximum": 1 },
+              "required": { "type": "boolean" },
+              "config": { "type": "object", "additionalProperties": true },
+              "file": { "type": "string" }
+            }
+          }
+        ]
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open Agent Evaluation Grader",
+  "type": "object",
+  "required": ["id", "type"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "type": {
+      "enum": [
+        "artifact_presence",
+        "pptx_structure",
+        "trace_signal",
+        "code",
+        "llm_judge",
+        "agent_judge",
+        "pi_agent_judge",
+        "external_command",
+        "scripted_command",
+        "rubric_prompt"
+      ]
+    },
+    "weight": { "type": "number", "exclusiveMinimum": 0 },
+    "threshold": { "type": "number", "minimum": 0, "maximum": 1 },
+    "required": { "type": "boolean" },
+    "prompt": {
+      "description": "Prompt text for llm_judge or agent_judge graders.",
+      "type": "string"
+    },
+    "prompt_path": {
+      "description": "Prompt file path relative to the grader file.",
+      "type": "string"
+    },
+    "code": {
+      "description": "Python code string. It must define grade(payload) and return a result dict.",
+      "type": "string"
+    },
+    "code_path": {
+      "description": "Python code file path relative to the grader file.",
+      "type": "string"
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

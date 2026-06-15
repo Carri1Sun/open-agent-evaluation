@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-agent-evaluation"
+version = "0.1.0"
+description = "Evaluation pipeline for agent task outputs."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Open Agent Evaluation Contributors" }
+]
+dependencies = []
+
+[project.scripts]
+open-agent-eval = "open_agent_evaluation.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

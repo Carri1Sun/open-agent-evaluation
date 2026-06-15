@@ -1,0 +1,42 @@
+{
+  "id": "slides.data_story.qbr_v1",
+  "title": "QBR data story deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "data_presentation",
+  "set": "capability",
+  "description": "Create an executive QBR deck from operating metrics.",
+  "question": {
+    "query": "Create a 10-12 slide QBR deck for executives using the attached operating metrics. Highlight growth, retention risk, funnel efficiency, and next-quarter actions. Include at least two charts, one summary table, and a clear recommendation section.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": ["attachments/qbr_metrics.csv"]
+    },
+    "attachments": [
+      {
+        "name": "qbr_metrics.csv",
+        "kind": "csv",
+        "path": "attachments/qbr_metrics.csv",
+        "description": "Quarterly ARR, churn, NRR, pipeline, conversion, and segment metrics."
+      }
+    ]
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.78,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/deck_structure.json",
+    "graders/data_story_quality.prompt.md",
+    "graders/workflow_signals.json"
+  ],
+  "metadata": {
+    "owner": "slides",
+    "promotion_criteria": "Promote to regression after three consecutive pass^3 runs across two model versions."
+  }
+}

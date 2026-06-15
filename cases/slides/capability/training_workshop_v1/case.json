@@ -1,0 +1,33 @@
+{
+  "id": "slides.training.workshop_v1",
+  "title": "Hands-on training deck",
+  "version": "1.0.0",
+  "task_family": "slides",
+  "task_type": "training",
+  "set": "capability",
+  "description": "Create a workshop deck with exercises and presenter notes.",
+  "question": {
+    "query": "Create a 12-15 slide internal workshop deck that teaches support agents how to review AI-agent task traces. Include learning objectives, examples, practice exercises, answer keys in speaker notes, and a closing checklist.",
+    "browser_initial_state": {
+      "url": "about:blank",
+      "auth_state": "not_required",
+      "local_files": []
+    },
+    "attachments": []
+  },
+  "output_contract": {
+    "required_artifacts": [
+      { "id": "deck", "kind": "pptx", "extension": ".pptx", "required": true }
+    ],
+    "final_report": { "required": true }
+  },
+  "success_threshold": 0.77,
+  "grader_files": [
+    "graders/deck_exists.json",
+    "graders/training_structure.json",
+    "graders/training_quality.prompt.md"
+  ],
+  "metadata": {
+    "owner": "slides"
+  }
+}
