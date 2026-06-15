@@ -1,6 +1,6 @@
 # open-agent-evaluation
 
-面向 general agent 任务的评测系统骨架。本仓库不执行 agent，只定义任务输入、候选输出、评测 case、grader 和流水线。
+面向 general agent 任务的评测系统骨架。本仓库的边界是定义任务输入、候选输出、评测 case、grader 和流水线；agent 执行由外部系统完成。
 
 当前重点实现 slides/PPT 生成任务评测，支持：
 
@@ -27,7 +27,7 @@ open-agent-eval run \
   --output reports/run.json
 ```
 
-不安装包时，也可以用 `PYTHONPATH=src python3 -m open_agent_evaluation.cli ...` 运行。
+临时运行可以使用 `PYTHONPATH=src python3 -m open_agent_evaluation.cli ...`。
 
 submission 目录需要包含 `submission.json`。核心输入是 `process`、`final_report`、`artifacts` 三项，其中 `artifacts` 可以为空，示例结构见 `schemas/submission.schema.json`。
 

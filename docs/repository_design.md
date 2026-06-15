@@ -2,7 +2,7 @@
 
 ## 1. 设计原则
 
-- 不执行 agent，只评测 agent 的候选输出。
+- 仓库边界是评测 agent 候选输出；agent 执行由外部系统完成。
 - case 是数据定义，infra 负责把它解析成可执行结构。
 - case 作者只需要编辑 query、prompt、grader JSON 或 Python 代码文件。
 - deterministic grader 优先，开放性问题走 rubric/external。
@@ -56,7 +56,7 @@ cases/<task_family>/<set>/<case_slug>/
     optional_input.csv
 ```
 
-`case.json` 只描述任务和引用哪些 grader：
+`case.json` 描述任务并引用 grader：
 
 - `question.query`：用户问题。
 - `question.browser_initial_state`：浏览器初始状态。
@@ -105,7 +105,7 @@ infra 解析之后，一个 evaluation case 包含：
 - `summary`：一句话解释。
 - `details`：结构化证据。
 
-case 层分数按已执行 grader 的权重加权。required grader 失败、报错或跳过时，case 不通过。非 required 的 skipped grader 不计入分母，但 case 会标记为 incomplete。
+case 层分数按已执行 grader 的权重加权。required grader 失败、报错或跳过时，case 标记为失败。非 required 的 skipped grader 从分母中排除，同时 case 标记为 incomplete。
 
 ## 8. 扩展方式
 
@@ -128,12 +128,12 @@ case 层分数按已执行 grader 的权重加权。required grader 失败、报
 第一轮实现自检：
 
 - 仓库结构保留了 data define、task define、pipeline 三个边界。
-- slides case 只是第一个任务族，schema 没有绑定到 slides。
-- LLM/agent grader 没有写死供应商，后续可以替换。
+- slides case 是第一个任务族，schema 保持任务族无关。
+- LLM/agent grader 保持供应商无关，后续可以替换。
 - case folder 与 infra loader 解耦，非技术作者可以主要编辑数据文件。
 
 第二轮实现自检：
 
 - 无外部依赖也能运行 deterministic tests，适合早期快速迭代。
-- PPTX 解析使用标准库，覆盖结构检查，但不承担复杂视觉渲染。
+- PPTX 解析使用标准库，覆盖结构检查；复杂视觉渲染留给后续 visual grader。
 - CLI 接受多个 submission，能自然支持 pass@3/pass^3。

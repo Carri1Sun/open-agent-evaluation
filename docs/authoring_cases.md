@@ -1,13 +1,13 @@
 # Case 与 Grader 添加/修改指导报告
 
-本文档说明如何在本仓库中新增一个 evaluation case、给 case 添加 grader，以及如何修改已有 case。目标读者是 case 作者和评测规则维护者；通常不需要改 `src/` 下的 infra 代码。
+本文档说明如何在本仓库中新增一个 evaluation case、给 case 添加 grader，以及如何修改已有 case。目标读者是 case 作者和评测规则维护者；常规 case 维护工作集中在 `cases/` 下的数据文件。
 
 ## 1. 先理解边界
 
 仓库分两层：
 
-- 数据定义层：`cases/`、`schemas/`、`examples/`、`docs/`。新增或修改评测任务时，优先只改这里。
-- 执行 infra 层：`src/open_agent_evaluation/`。只有新增 grader 类型、修改流水线、修改指标聚合时才需要改这里。
+- 数据定义层：`cases/`、`schemas/`、`examples/`、`docs/`。新增或修改评测任务时，优先改这里。
+- 执行 infra 层：`src/open_agent_evaluation/`。新增 grader 类型、修改流水线、修改指标聚合时，再改这里。
 
 一次 agent submission 输入给评测系统时，核心有三项：
 
@@ -180,7 +180,7 @@ Score from 0 to 1 using these criteria:
 Return JSON with `score`, `passed`, `summary`, and `details`.
 ```
 
-没有接外部 judge 时，这类 grader 会生成 prompt 并标记为 `skipped`。接外部 judge 时，可以改成 JSON grader 或在 config 中配置命令：
+Prompt grader 在设计阶段会生成 prompt 并标记为 `skipped`。正式接入外部 judge 时，可以改成 JSON grader 或在 config 中配置命令：
 
 ```json
 {
@@ -228,7 +228,7 @@ def grade(payload):
     }
 ```
 
-如果 Python grader 需要权重、阈值或 required 设置，在 `case.json` 中用对象引用：
+Python grader 的权重、阈值或 required 设置可以写在 `case.json` 的对象引用里：
 
 ```json
 {
@@ -266,9 +266,9 @@ PYTHONPATH=src python3 -m open_agent_evaluation.cli list-cases --cases cases/sli
 
 修改已有 case 的规则：
 
-- 已经进入 `regression` 的 case 不建议随意改 query；如果需求变了，优先新建 `v2`。
-- 如果只是修 typo 或让 grader 更严格，可以原地改。
-- 如果改动会改变 case 语义，应该新建新 case id。
+- 已经进入 `regression` 的 case 保持 query 稳定；需求变化时，优先新建 `v2`。
+- typo 修正或 grader 收紧可以原地改。
+- case 语义变化需要新建 case id。
 - `id` 一旦被 submission 或历史报告引用，尽量不要改。
 
 ## 6. 本地校验
@@ -281,7 +281,7 @@ PYTHONPATH=src python3 -m open_agent_evaluation.cli list-cases --cases cases/sli
 python3 -m unittest
 ```
 
-如果只想检查 JSON 语法：
+JSON 语法检查命令：
 
 ```bash
 for f in $(rg --files -g '*.json'); do python3 -m json.tool "$f" >/dev/null || exit 1; done
@@ -296,7 +296,7 @@ for f in $(rg --files -g '*.json'); do python3 -m json.tool "$f" >/dev/null || e
 3. 根据任务需要调整 `output_contract`。
 4. 先保留 `artifact_presence` 这类硬检查。
 5. 添加一个 `.prompt.md` 写开放性评审标准。
-6. 如果有客观条件，再加 `.py` 或结构化 JSON grader。
+6. 有客观条件时，再加 `.py` 或结构化 JSON grader。
 7. 跑校验命令。
 
 修改 case：
@@ -305,7 +305,7 @@ for f in $(rg --files -g '*.json'); do python3 -m json.tool "$f" >/dev/null || e
 2. 小修原地改，大改新建 `v2`。
 3. 修改 query、prompt、grader 或阈值。
 4. 跑校验命令。
-5. 如果修改了 Python grader，补或更新单元测试。
+5. 修改 Python grader 后，补或更新单元测试。
 
 ## 8. 常见错误
 
