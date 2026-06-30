@@ -40,12 +40,14 @@ evaluation_case + submission -> graders -> evaluation_result
 - `question.attachments`：任务附件列表。
 - `question.attachments[].name`：附件名称。
 - `question.attachments[].kind`：附件类型，例如 `csv`、`pdf`、`image`。
-- `question.attachments[].path`：附件路径，通常相对 case folder。
+- `question.attachments[].path`：附件路径，必须是相对 case folder 的 `attachments/<file>` 路径。
 - `question.attachments[].description`：附件用途说明。
 - `input`：运行时归一化后的输入结构，兼容历史格式；作者优先编写 `question`。
 - `input.user_query`：归一化后的用户请求。
 - `input.browser_initial_state`：归一化后的浏览器初始状态。
+- `input.browser_initial_state.resolved_local_files`：运行时解析出的本地附件绝对路径列表。
 - `input.attachments`：归一化后的附件列表。
+- `input.attachments[].resolved_path`：运行时解析出的附件绝对路径。
 - `output_contract`：对候选输出的契约要求。
 - `output_contract.required_artifacts`：必须或建议产出的文件列表。
 - `output_contract.required_artifacts[].id`：产物标识，例如 `deck`。

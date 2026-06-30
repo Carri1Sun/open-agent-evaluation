@@ -48,6 +48,8 @@ cases/slides/capability/my_case_v1/
     deck_exists.json
     deck_structure.json
     quality.prompt.md
+  attachments/
+    optional_input.csv
 ```
 
 命名建议：
@@ -98,7 +100,8 @@ cases/slides/capability/my_case_v1/
 - `set`：`capability` 或 `regression`，必须和目录语义一致。
 - `question.query`：用户实际请求。
 - `question.browser_initial_state`：浏览器初始状态。没有浏览器要求时可用 `about:blank`。
-- `question.attachments`：输入附件列表。附件路径建议放在 case 文件夹的 `attachments/` 下。
+- `question.attachments`：输入附件列表。附件文件必须放在 case 文件夹的 `attachments/` 下，路径写成 `attachments/<file>`。
+- `question.browser_initial_state.local_files`：需要给 agent 暴露的本地文件列表，路径同样必须指向 `attachments/` 下的文件。
 - `output_contract.required_artifacts`：要求 agent 产出的文件。没有文件产物时写空数组。
 - `success_threshold`：case 总分达到多少算通过。
 - `grader_files`：本 case 使用的 grader 文件，相对 case 文件夹。

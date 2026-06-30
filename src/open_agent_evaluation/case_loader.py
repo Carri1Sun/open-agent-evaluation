@@ -37,6 +37,7 @@ def load_case(path: Path) -> EvaluationCase:
         data = json.load(handle)
 
     data = dict(data)
+    data = resolve_case_assets(data, base_dir)
     data["graders"] = [grader.to_dict() for grader in load_grader_specs(data, base_dir)]
     return EvaluationCase.from_dict(data, source_path=case_path)
 
@@ -49,6 +50,78 @@ def load_cases(paths: Iterable[Path]) -> Dict[str, EvaluationCase]:
             raise EvaluationError("Duplicate case id: {}".format(case.id))
         cases[case.id] = case
     return cases
+
+
+def resolve_case_assets(case_data: Mapping[str, Any], base_dir: Path) -> Dict[str, Any]:
+    normalized = dict(case_data)
+    for key in ("question", "input"):
+        section = normalized.get(key)
+        if not isinstance(section, Mapping):
+            continue
+
+        resolved_section = dict(section)
+        if "attachments" in resolved_section:
+            resolved_section["attachments"] = [
+                resolve_attachment_entry(item, base_dir)
+                for item in resolved_section.get("attachments", [])
+            ]
+
+        browser_initial_state = resolved_section.get("browser_initial_state")
+        if isinstance(browser_initial_state, Mapping):
+            resolved_section["browser_initial_state"] = resolve_browser_initial_state(
+                browser_initial_state,
+                base_dir,
+            )
+
+        normalized[key] = resolved_section
+    return normalized
+
+
+def resolve_attachment_entry(entry: Any, base_dir: Path) -> Dict[str, Any]:
+    if not isinstance(entry, Mapping):
+        raise EvaluationError("Attachment entry must be an object.")
+
+    resolved = dict(entry)
+    path_value = resolved.get("path")
+    if not path_value:
+        raise EvaluationError("Attachment is missing path.")
+
+    resolved["resolved_path"] = str(resolve_case_attachment_path(base_dir, path_value, "Attachment path"))
+    return resolved
+
+
+def resolve_browser_initial_state(data: Mapping[str, Any], base_dir: Path) -> Dict[str, Any]:
+    resolved = dict(data)
+    local_files = resolved.get("local_files")
+    if local_files is None:
+        return resolved
+    if not isinstance(local_files, list):
+        raise EvaluationError("browser_initial_state.local_files must be a list.")
+
+    resolved["resolved_local_files"] = [
+        str(resolve_case_attachment_path(base_dir, path_value, "Local file path"))
+        for path_value in local_files
+    ]
+    return resolved
+
+
+def resolve_case_attachment_path(base_dir: Path, value: Any, label: str) -> Path:
+    path = Path(str(value))
+    if path.is_absolute():
+        raise EvaluationError("{} must be relative to the case folder: {}".format(label, path))
+    if not path.parts or path.parts[0] != "attachments":
+        raise EvaluationError("{} must be under attachments/: {}".format(label, path))
+
+    attachments_dir = (base_dir / "attachments").resolve()
+    resolved = (base_dir / path).resolve()
+    try:
+        resolved.relative_to(attachments_dir)
+    except ValueError:
+        raise EvaluationError("{} must stay under attachments/: {}".format(label, path))
+
+    if not resolved.is_file():
+        raise EvaluationError("{} does not exist: {}".format(label, resolved))
+    return resolved
 
 
 def load_grader_specs(case_data: Mapping[str, Any], base_dir: Path) -> List[GraderSpec]:

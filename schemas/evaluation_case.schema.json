@@ -31,7 +31,10 @@
             "properties": {
               "name": { "type": "string" },
               "kind": { "type": "string" },
-              "path": { "type": "string" },
+              "path": {
+                "description": "Local attachment path under attachments/ relative to the case folder.",
+                "type": "string"
+              },
               "description": { "type": "string" }
             }
           }
@@ -51,7 +54,12 @@
           "properties": {
             "url": { "type": "string" },
             "auth_state": { "type": "string" },
-            "local_files": { "type": "array", "items": { "type": "string" } }
+            "local_files": { "type": "array", "items": { "type": "string" } },
+            "resolved_local_files": {
+              "description": "Runtime-resolved absolute paths for local_files.",
+              "type": "array",
+              "items": { "type": "string" }
+            }
           }
         },
         "attachments": {
@@ -63,7 +71,14 @@
             "properties": {
               "name": { "type": "string" },
               "kind": { "type": "string" },
-              "path": { "type": "string" },
+              "path": {
+                "description": "Local attachment path under attachments/ relative to the case folder.",
+                "type": "string"
+              },
+              "resolved_path": {
+                "description": "Runtime-resolved absolute path for the attachment.",
+                "type": "string"
+              },
               "description": { "type": "string" }
             }
           }

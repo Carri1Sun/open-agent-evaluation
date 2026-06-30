@@ -65,6 +65,13 @@ cases/<task_family>/<set>/<case_slug>/
 - `grader_files`：相对 case 文件夹的 grader 文件路径。
 - `success_threshold`：case 层通过阈值。
 
+附件规则：
+
+- 带附件的 case 必须把文件放在该 case 文件夹的 `attachments/` 子目录中。
+- `question.attachments[].path` 和 `question.browser_initial_state.local_files[]` 使用相对 case 文件夹的路径，路径必须以 `attachments/` 开头。
+- `case_loader` 加载 case 时会校验附件文件存在，并在运行时结构中为附件补充 `resolved_path`，为 `local_files` 补充 `resolved_local_files`。
+- 缺失附件、绝对路径或跳出 `attachments/` 的路径都会让 case 加载失败，避免评测时才暴露不可读输入。
+
 grader 文件是评测规则：
 
 - `.json`：结构化 grader，例如 `artifact_presence`、`pptx_structure`、`trace_signal`。
@@ -80,6 +87,8 @@ infra 解析之后，一个 evaluation case 包含：
 - `task_family`：例如 `slides`、`research`、`browser_ops`。
 - `task_type`：任务子类型，例如 `data_presentation`。
 - `input`：用户 query、浏览器初始状态、附件。
+- `input.attachments[].resolved_path`：loader 解析出的附件绝对路径，供 runner、外部 grader 或评审 agent 读取。
+- `input.browser_initial_state.resolved_local_files`：loader 解析出的本地文件绝对路径列表。
 - `output_contract`：候选输出应该包含哪些产物。
 - `graders`：grader 列表，每个 grader 有 type、weight、threshold、required 和 config。
 - `success_threshold`：case 层通过阈值。

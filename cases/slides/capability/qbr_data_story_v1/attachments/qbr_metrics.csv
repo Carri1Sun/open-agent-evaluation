@@ -1,0 +1,13 @@
+quarter,segment,arr_musd,new_arr_musd,expansion_arr_musd,churn_arr_musd,nrr_pct,logo_churn_pct,pipeline_musd,sql_to_win_pct,cac_payback_months,active_customers,notes
+2024-Q1,Enterprise,44.2,3.8,2.9,1.1,118,2.4,18.6,24.0,13.5,142,Renewals stabilized after support escalation program.
+2024-Q1,Mid-Market,26.5,2.6,1.1,1.3,104,4.8,10.4,19.0,11.2,386,Pipeline quality improved but churn remains elevated.
+2024-Q1,SMB,9.8,1.0,0.2,0.7,91,7.5,4.1,13.0,8.4,812,Low activation accounts caused retention pressure.
+2024-Q2,Enterprise,48.9,4.4,3.4,0.9,122,1.9,21.7,26.0,12.8,151,Strategic accounts expanded analytics seats.
+2024-Q2,Mid-Market,28.1,2.8,1.3,1.1,108,4.1,12.9,21.0,10.9,401,Partner channel added qualified opportunities.
+2024-Q2,SMB,10.4,1.2,0.3,0.8,94,7.1,4.9,14.0,8.1,834,Self-serve onboarding reduced early cancellations.
+2024-Q3,Enterprise,53.6,4.9,3.9,1.0,124,2.0,25.4,27.0,12.1,159,Expansion concentrated in security and data teams.
+2024-Q3,Mid-Market,30.7,3.4,1.5,1.0,111,3.7,15.6,22.0,10.5,427,Sales cycle shortened after vertical playbooks.
+2024-Q3,SMB,11.1,1.3,0.4,0.8,96,6.8,5.5,15.0,7.9,861,Usage nudges improved trial conversion.
+2024-Q4,Enterprise,58.4,5.2,4.3,1.2,125,2.2,28.8,28.0,11.8,168,Top account renewals require executive sponsorship.
+2024-Q4,Mid-Market,33.5,3.8,1.8,1.2,112,3.9,17.4,23.0,10.1,452,Retention risk clusters in legacy pricing cohort.
+2024-Q4,SMB,11.7,1.4,0.4,0.9,95,7.0,6.0,15.0,7.6,889,Support deflection improved cost profile but churn risk remains.
