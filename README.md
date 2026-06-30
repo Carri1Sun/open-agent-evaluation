@@ -33,9 +33,9 @@ submission 目录需要包含 `submission.json`。核心输入是 `process`、`f
 
 ## 目录
 
-- `docs/slides_evaluation_design.md`：slides 任务类型、评测标准和 grader 设计。
-- `docs/repository_design.md`：仓库模块、数据流和扩展方式。
-- `docs/authoring_cases.md`：新增/修改 case 和 grader 的指导报告。
+- `docs/product/slides_evaluation_design.md`：slides 任务类型、评测标准和 grader 设计。
+- `docs/technical/repository_design.md`：仓库模块、数据流和扩展方式。
+- `docs/manuel/authoring_cases.md`：新增/修改 case 和 grader 的指导报告。
 - `schemas/`：evaluation case 与 submission 的 JSON Schema。
 - `cases/slides/`：slides capability/regression case folders。
 - `src/open_agent_evaluation/`：评测流水线实现。
